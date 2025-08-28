@@ -1,5 +1,6 @@
+import { GifService } from 'src/app/gifs/services/gifs.service';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 
 
@@ -18,6 +19,7 @@ interface MenuOption{
   
 })
 export class SideMenuOptionsComponent { 
+  GifService = inject(GifService);
 
   menuOptions:MenuOption[] = [
 
@@ -33,9 +35,9 @@ export class SideMenuOptionsComponent {
       label: 'Buscador',
       subLabel: 'Buscar Gifs',
       router: '/dashboard/search'
-    }
+    },
 
-    
+
 
 
   ]
